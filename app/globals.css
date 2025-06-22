@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+
+body{
+  font-family: var(--font-poppins);
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.animate-scroll {
+  animation: scrollUp 20s linear infinite;
+}
+
+
