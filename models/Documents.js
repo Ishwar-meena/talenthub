@@ -1,16 +1,19 @@
-import mongoose, { Schema, model, models } from "mongoose";
+import  { Schema, model, models } from "mongoose";
 
 const documentschema = new Schema(
     {
-        userId:{type:String,required:true,unique:true},
+        userId:{type:String,required:true},
         name:{type:String,required:true},
         fathername:{type:String,required:true},
         mothername:{type:String,required:true},
         city:{type:String,required:true},
         insistitution:{type:String,required:true},
         result:{type:String,required:true},
+        marksheet:{type:String,required:true},
+        exam:{type:String,required:true},
         verified: { type: Boolean, default: false },
-        document:{type:String,required:true},
+        rejected: { type: Boolean, default: false },
+        reason: { type: String },
     },
     {
         timestamps:true,

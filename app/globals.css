@@ -15,7 +15,7 @@ body{
 }
 
 .animate-scroll {
-  animation: scrollUp 20s linear infinite;
+  animation: scrollUp 30s linear infinite;
 }
 
 

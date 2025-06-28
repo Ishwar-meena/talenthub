@@ -2,6 +2,7 @@
   "name": "talenthub",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -11,16 +12,22 @@
   "dependencies": {
     "cloudinary": "^2.7.0",
     "file-type": "^21.0.0",
-    "lucide-react": "^0.518.0",
     "mongoose": "^8.16.0",
     "next": "15.3.4",
     "next-auth": "^4.24.11",
+    "node-fetch": "^3.3.2",
     "react": "^19.0.0",
+    "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",
-    "react-toastify": "^11.0.5"
+    "react-icons": "^5.5.0",
+    "react-intersection-observer": "^9.16.0",
+    "react-toastify": "^11.0.5",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "eslint": "9.30.0",
+    "eslint-config-next": "15.3.4",
     "tailwindcss": "^4"
   }
 }

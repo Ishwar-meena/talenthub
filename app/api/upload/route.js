@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { fileTypeFromBuffer } from "file-type";
 
 
+let resourceType = 'image';
 
 // this validate a file is valid type or not for images and pdf
 const fileValidate = async (buffer) => {
@@ -25,6 +26,7 @@ export async function POST(request) {
     try {
         const data = await request.formData();
         const file = data.get("file");
+
         if (!file) {
             return NextResponse.json(
                 {
@@ -39,7 +41,7 @@ export async function POST(request) {
         if (!(await fileValidate(buffer))) {
             return NextResponse.json(
                 {
-                    error: "file type is not correct",
+                    error: "please upload a valid file type",
                     status: 400,
                 }
             )
@@ -57,7 +59,7 @@ export async function POST(request) {
         const result = await new Promise((resolve, reject) => {
             cloudinary.uploader.upload_stream(
                 {
-                    resource_type: 'auto',
+                    resource_type: 'image',
                     folder: 'talenthub'
                 },
                 (err, result) => {
@@ -67,12 +69,14 @@ export async function POST(request) {
             ).end(buffer);
         });
 
+
         if (!result) {
             return NextResponse.json(
                 { error: "failed to upload image on server", status: 500 }
             );
         }
 
+        // send uploaded file url 
         return NextResponse.json(
             {
                 url: result.secure_url,
@@ -84,7 +88,7 @@ export async function POST(request) {
     } catch (error) {
         console.error(error);
         return NextResponse.json(
-            { error: "failed to upload image on server", status: 500 }
+            { error: "failed to upload file on server", status: 500 }
         );
     }
 }
