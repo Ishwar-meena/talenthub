@@ -3,9 +3,9 @@ import React from 'react'
 const Notification = () => {
   return (
     <div className="flex justify-center items-center my-8">
-      <div className="w-[95%]  sm:w-3/4 lg:w-1/2 border  border-gray-300 rounded-md p-4 overflow-hidden">
+      <div className="w-[95%] max-h-[60vh] sm:w-3/4 lg:w-1/2 border  border-gray-300 rounded-md p-4 overflow-hidden">
         <h1 className="text-center font-medium text-3xl sm:text-4xl lg:text-5xl my-4">Notifications</h1>
-        <div className="min-h-80 overflow-hidden">
+        <div className="min-h-40 overflow-hidden">
           <ul className="flex flex-col text-center gap-4 animate-scroll">
             <li>We proudly honor students who secured top ranks in government exams!</li>
             <li>Applications open for our 2025 Excellence Award — nominate a deserving student today!</li>
