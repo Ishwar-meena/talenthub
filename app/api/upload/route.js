@@ -3,8 +3,6 @@ import { NextResponse } from "next/server";
 import { fileTypeFromBuffer } from "file-type";
 
 
-let resourceType = 'image';
-
 // this validate a file is valid type or not for images and pdf
 const fileValidate = async (buffer) => {
     const fileTypes = [

@@ -82,7 +82,6 @@ const Scholarship = () => {
 
     try {
       setIsSubmit(true);
-
       const formdata = new FormData();
       formdata.set('file', file); // setfile 
       toast.warning('file is uploading...');
