@@ -23,7 +23,7 @@ A modern, secure web application built with **Next.js**, **React**, and **Tailwi
 - **Backend**: Next.js API Routes, MongoDB, Mongoose
 - **Authentication**: NextAuth.js (Google & GitHub providers)
 - **File Storage**: Secure server-side handling of images and PDFs
-- **Email**: Automated notifications for users and admins
+- **Email**: Automated notifications for users and admins. I use Brevo for email sending.
 - **Deployment**: Vercel 
 
 ---
@@ -57,7 +57,28 @@ npm install
 
 ### 3. Configure Environment Variables
 
-Create a `.env.local` file with your MongoDB URI, NextAuth credentials, and email provider settings.
+Create a `.env.local` file in the root directory and add the following environment variables:
+
+```env
+MONGO_URI=
+
+GITHUB_ID=
+GITHUB_SECRET=
+
+GOOGLE_SECRET=
+
+NEXTAUTH_SECRET=
+
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+
+BREVO_API_KEY=
+SENDER_EMAIL=
+ADMIN_EMAIL=
+```
+
+Fill in each variable with your respective credentials and secrets.
 
 ### 4. Run the Development Server
 
